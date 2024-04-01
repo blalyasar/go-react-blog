@@ -102,5 +102,15 @@ curl -X GET http://localhost:8000
 {"blog_records":[{"id":1,"title":"FIRST BLOG","post":"FIRST POST"},{"id":2,"title":"SECOND BLOG","post":"SECOND POST"}],"msg":"Blog List","statusText":"Ok"}
 
 5.VIDEO:
-
 go get github.com/joho/godotenv
+
+
+Add .env file in server directory for db info
+
+```
+db_user=""
+db_password="...."
+db_name="fiberblog"
+```
+
+
