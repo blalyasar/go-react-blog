@@ -74,8 +74,7 @@ $ curl -X DELETE  http://localhost:8000
 4.VIDEO
 BEFORE 4.VIDEO CREATE MYSQL DATA IN TABLES....
 ```
-MariaDB [fiberblog]> INSERT INTO `blogs` (`id`,`title`,`post`) VALUES (NULL, "FIRST BLOG"  "FIRST POST");
-ERROR 1136 (21S01): Column count doesn't match value count at row 1
+
 MariaDB [fiberblog]> 
 
 MariaDB [fiberblog]> INSERT INTO `blogs` (`id`,`title`,`post`) VALUES (NULL, 'FIRST BLOG',  'FIRST POST');
