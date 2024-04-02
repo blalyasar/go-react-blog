@@ -119,6 +119,25 @@ $curl -X POST --header "Content-Type: application/json"  --data '{"title":"newti
 {"data":{"id":6,"title":"newtitle","post":"new post"},"msg":"Record is saved successfuly.","statusText":"Ok"
 
 $ curl -X GET http://localhost:8000
-{"blog_records":[{"id":1,"title":"FIRST BLOG","post":"FIRST POST"},{"id":2,"title":"SECOND BLOG","post":"SECOND POST"},{"id":3,"title":"","post":""},{"id":4,"title":"","post":""}],"msg":"Blog List","statusText":"Ok"}falanca@falanca:~$ 
+{"blog_records":[{"id":1,"title":"FIRST BLOG","post":"FIRST POST"},{"id":2,"title":"SECOND BLOG","post":"SECOND POST"},{"id":3,"title":"","post":""},{"id":4,"title":"","post":""}],"msg":"Blog List","statusText":"Ok"}
+:~$ 
 ```
 
+
+
+7.VIDEO
+```
+put examples
+
+curl -X GET http://localhost:8000
+{"blog_records":[{"id":1,"title":"FIRST BLOG","post":"FIRST POST"},{"id":2,"title":"SECOND BLOG","post":"SECOND POST"},{"id":7,"title":"newtitle","post":"new post"},{"id":8,"title":"newtitle","post":"new post"},{"id":9,"title":"newtitle updated444","post":"new post updated 444"},{"id":10,"title":"newtitle updated444","post":"new post updated 444"}],"msg":"Blog List","statusText":"Ok"}
+
+
+curl -X PUT --header "Content-Type: application/json"  --data '{"title":"newtitle updated444 TO 555","post":"new post updated 444 TO 555"}'   http://localhost:8000/9
+{"data":{"id":9,"title":"newtitle updated444 TO 555","post":"new post updated 444 TO 555"},"msg":"record updated successfully","statusText":"Ok"}
+
+
+curl -X GET http://localhost:8000
+{"blog_records":[{"id":1,"title":"FIRST BLOG","post":"FIRST POST"},{"id":2,"title":"SECOND BLOG","post":"SECOND POST"},{"id":7,"title":"newtitle","post":"new post"},{"id":8,"title":"newtitle","post":"new post"},{"id":9,"title":"newtitle updated444 TO 555","post":"new post updated 444 TO 555"},{"id":10,"title":"newtitle updated444","post":"new post updated 444"}],"msg":"Blog List","statusText":"Ok"}
+
+```
