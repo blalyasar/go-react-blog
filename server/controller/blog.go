@@ -86,9 +86,30 @@ func BlogUpdate(c *fiber.Ctx) error {
 
 func BlogDelete(c *fiber.Ctx) error {
 	context := fiber.Map{
-		"statusText": "Ok",
-		"msg":        "Blog Delete from given id",
+		"statusText": "",
+		"msg":        "",
 	}
+
+	id := c.Params("id")
+	var record model.Blog
+	database.DBConn.First(&record, id)
+
+	if record.ID == 0 {
+		log.Println("Record not Found")
+		context["msg"] = "Record not Found"
+		c.Status(400)
+		return c.JSON(context)
+	}
+	result := database.DBConn.Delete(record)
+	if result.Error != nil {
+		context["msg"] = "Something is wrong"
+		context["statusText"] = "Something is wrong"
+		c.Status(400)
+		return c.JSON(context)
+	}
+
+	context["statusText"] = "Ok"
+	context["msg"] = "Record deleted successfuly"
 	c.Status(200)
 	return c.JSON(context)
 }

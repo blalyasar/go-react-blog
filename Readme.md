@@ -141,3 +141,19 @@ curl -X GET http://localhost:8000
 {"blog_records":[{"id":1,"title":"FIRST BLOG","post":"FIRST POST"},{"id":2,"title":"SECOND BLOG","post":"SECOND POST"},{"id":7,"title":"newtitle","post":"new post"},{"id":8,"title":"newtitle","post":"new post"},{"id":9,"title":"newtitle updated444 TO 555","post":"new post updated 444 TO 555"},{"id":10,"title":"newtitle updated444","post":"new post updated 444"}],"msg":"Blog List","statusText":"Ok"}
 
 ```
+
+
+8.VIDEO DELETE METHOD 
+```
+
+$ curl -X GET http://localhost:8000
+{"blog_records":[{"id":1,"title":"FIRST BLOG","post":"FIRST POST"},{"id":2,"title":"SECOND BLOG","post":"SECOND POST"},{"id":7,"title":"newtitle","post":"new post"},{"id":8,"title":"newtitle","post":"new post"}],"msg":"Blog List","statusText":"Ok"}
+
+$ curl -X DELETE --header "Content-Type: application/json"    http://localhost:8000/8
+{"msg":"Record deleted successfuly","statusText":"Ok"}
+$ 
+
+$ curl -X GET http://localhost:8000
+{"blog_records":[{"id":1,"title":"FIRST BLOG","post":"FIRST POST"},{"id":2,"title":"SECOND BLOG","post":"SECOND POST"},{"id":7,"title":"newtitle","post":"new post"}],"msg":"Blog List","statusText":"Ok"}
+
+```
