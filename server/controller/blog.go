@@ -1,6 +1,8 @@
 package controller
 
 import (
+	"log"
+
 	"github.com/blalyasar/go-react-blog/database"
 	"github.com/blalyasar/go-react-blog/model"
 	"github.com/gofiber/fiber/v2"
@@ -29,7 +31,24 @@ func BlogCreate(c *fiber.Ctx) error {
 		"msg":        "Blog Create",
 	}
 
-	c.Status(200)
+	record := new(model.Blog)
+	if err := c.BodyParser(&record); err != nil {
+		log.Println("Error in parsing request")
+		context["statusText"] = ""
+		context["msg"] = "Something is wrong"
+	}
+
+	result := database.DBConn.Create(record)
+	if result.Error != nil {
+		log.Println("Error in saving data")
+		context["statusText"] = ""
+		context["msg"] = "Something is wrong"
+	}
+
+	context["msg"] = "Record is saved successfuly."
+	context["data"] = record
+
+	c.Status(201)
 	return c.JSON(context)
 }
 

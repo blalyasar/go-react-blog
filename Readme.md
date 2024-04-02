@@ -113,4 +113,12 @@ db_password="...."
 db_name="fiberblog"
 ```
 
+6.VIDEO:
+```
+$curl -X POST --header "Content-Type: application/json"  --data '{"title":"newtitle","post":"new post"}'   http://localhost:8000
+{"data":{"id":6,"title":"newtitle","post":"new post"},"msg":"Record is saved successfuly.","statusText":"Ok"
+
+$ curl -X GET http://localhost:8000
+{"blog_records":[{"id":1,"title":"FIRST BLOG","post":"FIRST POST"},{"id":2,"title":"SECOND BLOG","post":"SECOND POST"},{"id":3,"title":"","post":""},{"id":4,"title":"","post":""}],"msg":"Blog List","statusText":"Ok"}falanca@falanca:~$ 
+```
 
