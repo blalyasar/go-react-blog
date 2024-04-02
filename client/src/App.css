@@ -1,0 +1,9 @@
+.box{
+  border: solid 1px #282c34;;
+  margin-right: 4px;
+  padding: 10px;
+}
+
+.box .title{
+  font-weight: 800;
+}

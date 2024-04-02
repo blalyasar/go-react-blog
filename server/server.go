@@ -2,10 +2,10 @@ package main
 
 import (
 	"log"
-
 	"github.com/blalyasar/go-react-blog/database"
 	"github.com/blalyasar/go-react-blog/router"
 	"github.com/gofiber/fiber/v2"
+	"github.com/gofiber/fiber/v2/middleware/cors"
 	"github.com/joho/godotenv"
 )
 
@@ -30,6 +30,11 @@ func main() {
 	defer sqlDb.Close()
 
 	app := fiber.New()
+	app.Use(cors.New(cors.Config{
+		AllowOrigins: "*",
+		AllowHeaders: "Origin, Content-Type, Accept",
+	}))
+
 	// app.Get("/", func(c *fiber.Ctx) error {
 
 	// 	return c.JSON(

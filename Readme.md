@@ -157,3 +157,29 @@ $ curl -X GET http://localhost:8000
 {"blog_records":[{"id":1,"title":"FIRST BLOG","post":"FIRST POST"},{"id":2,"title":"SECOND BLOG","post":"SECOND POST"},{"id":7,"title":"newtitle","post":"new post"}],"msg":"Blog List","statusText":"Ok"}
 
 ```
+
+
+9.VIDEO
+
+```
+
+resource:
+https://react-bootstrap.github.io/
+https://axios-http.com/docs/intro 
+
+npx create-react-app client
+cd client
+npm install react-bootstrap bootstrap 
+npm install axios
+
+
+```
+
+
+10.VIDEO:
+REACT APP AND API REQUEST
+Cross-Origin Request Blocked: The Same Origin Policy disallows reading the remote resource at http://localhost:8000/. (Reason: CORS request did not succeed). Status code: (null).
+
+
+
+CREATE .env file in client directory and write localhost and  created gitignore file 
